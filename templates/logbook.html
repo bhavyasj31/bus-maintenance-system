@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Logbook</title>
+  <link rel="stylesheet" href="styles.css" />
+  <script defer src="script.js"></script>
+  <script src="https://cdn.sheetjs.com/xlsx-latest/package/dist/xlsx.full.min.js"></script>
+</head>
+<body>
+<header>
+  <div class="logo-container">
+   <img src="https://www.joonsquare.com/usermanage/image/business/pragati-engineering-college-east-godavari-15210/pragati-engineering-college-east-godavari-logo.png" alt="PEC" class="logo">
+    <h1>Bus Maintenance System</h1>
+  </div>
+  <nav>
+    <ul>
+      <li><a href="index.html">Home</a></li>
+      <li><a href="dashboard.html">Dashboard</a></li>
+      <li><a href="bus_details.html">Bus Details</a></li>
+      <li><a href="driver_info.html">Driver Info</a></li>
+      <li><a href="logbook.html">Logbook</a></li>
+      <li><a href="maintenance.html">Maintenance</a></li>
+      <li><a href="fuel.html">Fuel</a></li>
+      <li><a href="inventory.html">Inventory</a></li>
+      <li><a href="safety.html">Safety</a></li>
+      <li><a href="complaints.html">Complaints</a></li>
+     
+    </ul>
+  </nav>
+</header>
+
+  <section class="section">
+    <h2>Digital Logbook</h2>
+    <input type="file" id="logbook-upload" accept=".csv,.xlsx"/>
+    <button onclick="addLog()">Add Log Entry</button>
+    <button onclick="exportLogbook()">Export CSV</button>
+    <button onclick="exportLogbook()">Export XLSX</button>
+
+        <input type="text" id="logbook-search" placeholder="Search by bus or route" />
+    <table id="logbook-table">
+      <thead>
+        <tr><th>Date</th><th>Bus</th><th>Route</th><th>Start</th><th>End</th><th>KM</th><th>Fuel</th></tr>
+      </thead>
+      <tbody></tbody>
+    </table>
+  </section>
+  <script src="https://cdn.sheetjs.com/xlsx-latest/package/dist/xlsx.full.min.js"></script>
+  <footer>
+    <p>&copy; 2025 Pragati Engineering College | Bus Maintenance System</p>
+  </footer>
+</body>
+</html>

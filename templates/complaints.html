@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Complaints</title>
+  <link rel="stylesheet" href="styles.css" />
+  <script defer src="script.js"></script>
+  <script defer src="https://cdn.sheetjs.com/xlsx-latest/package/dist/xlsx.full.min.js"></script>
+</head>
+<body>
+  <header>
+    <div class="logo-container">
+      <img src="https://www.joonsquare.com/usermanage/image/business/pragati-engineering-college-east-godavari-15210/pragati-engineering-college-east-godavari-logo.png" alt="PEC" class="logo">
+      <h1>Bus Maintenance System</h1>
+    </div>
+    <nav>
+      <ul>
+        <li><a href="index.html">Home</a></li>
+        <li><a href="dashboard.html">Dashboard</a></li>
+        <li><a href="bus_details.html">Bus Details</a></li>
+        <li><a href="driver_info.html">Driver Info</a></li>
+        <li><a href="logbook.html">Logbook</a></li>
+        <li><a href="maintenance.html">Maintenance</a></li>
+        <li><a href="fuel.html">Fuel</a></li>
+        <li><a href="inventory.html">Inventory</a></li>
+        <li><a href="safety.html">Safety</a></li>
+        <li><a href="complaints.html" class="active">Complaints</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <section class="section">
+    <h2>Complaints & Issues</h2>
+
+    <form class="complaint-form" onsubmit="submitComplaint(event)">
+      <input type="text" id="complainant-name" placeholder="Bus Number" required />
+      <select id="complaint-category">
+        <option>Maintenance</option>
+        <option>Cleanliness</option>
+        <option>Route</option>
+        <option>Timing</option>
+      </select>
+      <textarea id="complaint-text" placeholder="Describe the issue..." required></textarea>
+      <button type="submit">Submit Complaint</button>
+    </form>
+
+    <div class="complaint-actions">
+      <input type="file" id="complaints-upload" />
+      <button onclick="exportComplaintsCSV()">Export CSV</button>
+      <button onclick="exportComplaintsXLSX()">Export XLSX</button>
+      <input type="text" id="complaints-search" placeholder="Search complaints..." />
+    </div>
+
+    <table id="complaints-table">
+      <thead>
+        <tr>
+          <th>Submitted</th>
+          <th>Bus No</th>
+          <th>Category</th>
+          <th>Message</th>
+          <th>Status</th>
+        </tr>
+      </thead>
+      <tbody id="complaints-tbody"></tbody>
+    </table>
+  </section>
+
+  <footer>
+    <p>&copy; 2025 Pragati Engineering College | Bus Maintenance System</p>
+  </footer>
+</body>
+</html>
