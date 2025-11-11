@@ -100,7 +100,20 @@ nav a:hover {
   font-size: 1.2rem;
 }
 
-.hero button {
+.button-group {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 10px;
+  margin-top: 20px;
+}
+
+.button-group a {
+  flex: 1 1 300px;
+  text-align: center;
+}
+
+.button-group a button {
   background-color: #ffcc00;
   color: #002b5b;
   border: none;
@@ -109,12 +122,11 @@ nav a:hover {
   cursor: pointer;
   font-weight: bold;
   transition: background-color 0.3s ease;
-  margin: 10px;
   width: 100%;
   max-width: 300px;
 }
 
-.hero button:hover {
+.button-group a button:hover {
   background-color: #ffd84d;
 }
 
@@ -242,11 +254,14 @@ footer {
     font-size: 1rem;
   }
 
-  .hero-content a button {
-    display: block;
+  .button-group {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .button-group a {
     width: 100%;
     max-width: 300px;
-    margin: 10px auto;
   }
 
   .section {
