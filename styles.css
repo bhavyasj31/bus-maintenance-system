@@ -5,6 +5,7 @@ body {
   background-color: #f8f9fa;
   color: #333;
   scroll-behavior: smooth;
+  overflow-x: hidden;
 }
 
 header {
@@ -17,11 +18,13 @@ header {
   position: sticky;
   top: 0;
   z-index: 10;
+  flex-wrap: wrap;
 }
 
 .logo-container {
   display: flex;
   align-items: center;
+  flex-wrap: wrap;
 }
 
 .logo {
@@ -35,6 +38,7 @@ nav ul {
   list-style: none;
   gap: 15px;
   padding: 0;
+  flex-wrap: wrap;
 }
 
 nav a {
@@ -71,6 +75,7 @@ nav a:hover {
 .hero-content {
   position: relative;
   z-index: 1;
+  padding: 20px;
 }
 
 .hero h2 {
@@ -86,6 +91,9 @@ nav a:hover {
   cursor: pointer;
   font-weight: bold;
   transition: background-color 0.3s ease;
+  margin: 10px;
+  width: 100%;
+  max-width: 300px;
 }
 
 .hero button:hover {
@@ -125,6 +133,7 @@ table {
   width: 100%;
   border-collapse: collapse;
   margin-top: 20px;
+  overflow-x: auto;
 }
 
 th, td {
@@ -164,10 +173,56 @@ input[type="file"], input[type="text"], select, textarea {
   border-radius: 5px;
 }
 
-
 footer {
   background-color: #002b5b;
   color: white;
   text-align: center;
   padding: 15px 0;
+}
+
+/* ✅ Mobile Responsiveness */
+@media (max-width: 768px) {
+  header {
+    flex-direction: column;
+    text-align: center;
+    padding: 15px;
+  }
+
+  .logo-container {
+    flex-direction: column;
+    margin-bottom: 10px;
+  }
+
+  nav ul {
+    flex-direction: column;
+    align-items: center;
+    gap: 10px;
+  }
+
+  .hero {
+    height: auto;
+    padding: 40px 20px;
+  }
+
+  .hero h2 {
+    font-size: 1.8rem;
+  }
+
+  .hero p {
+    font-size: 1rem;
+  }
+
+  .hero button {
+    font-size: 1rem;
+    padding: 10px;
+  }
+
+  table {
+    display: block;
+    overflow-x: auto;
+  }
+
+  input[type="file"], input[type="text"], select, textarea {
+    max-width: 100%;
+  }
 }
